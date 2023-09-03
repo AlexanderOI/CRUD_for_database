@@ -1,9 +1,7 @@
 import sys
-import typing
-from PyQt5.QtWidgets import QApplication, QMainWindow, QHeaderView, QWidget
-from PyQt5.QtCore import QPropertyAnimation, QEasingCurve, Qt
-from PyQt5 import QtWidgets, QtCore
-from PyQt5.uic import loadUi
+from PyQt5.QtWidgets import QApplication, QMainWindow, QHeaderView
+from PyQt5.QtCore import Qt
+from PyQt5 import QtWidgets
 from connect import Connect
 from interface import Ui_MainWindow
 
@@ -30,6 +28,9 @@ class MainInterface(QMainWindow, Ui_MainWindow):
         self.bt_save_register.clicked.connect(self.save_register)
         self.bt_save_update.clicked.connect(self.save_update)
         self.bt_save_delete.clicked.connect(self.save_delete)
+
+        self.ln_upadate_search.returnPressed.connect(self.get_text_update)
+        self.ln_delete_search.returnPressed.connect(self.get_text_delete)
 
         self.frame_header.mouseMoveEvent = self.move_window
         self.table_products.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
@@ -80,32 +81,77 @@ class MainInterface(QMainWindow, Ui_MainWindow):
         self.ln_register_id.setText(str(len(self.database.show()) + 1))
 
     def save_register(self):
-        self.ln_register_id.text()
         name = self.ln_register_name.text()
         category = self.ln_register_category.text()
         price = self.ln_register_price.text()
         quantity = self.ln_register_quantity.text()
+
         if name == "" or category == "" or price == "" or quantity == "":
-            self.notification_register.setText("Hay campos vacios")
-            return
+            self.notification_register.setText("Hay campos vacíos")
         else:
             self.notification_register.setText("Se registro el Producto")
+            self.database.insert(name, price, category, quantity)
 
-        self.database.insert(name, price, category, quantity)
+            self.ln_register_id.clear()
+            self.ln_register_name.clear()
+            self.ln_register_category.clear()
+            self.ln_register_price.clear()
+            self.ln_register_quantity.clear()
 
-        self.ln_register_id.clear()
-        self.ln_register_name.clear()
-        self.ln_register_category.clear()
-        self.ln_register_price.clear()
-        self.ln_register_quantity.clear()
+    def get_text_update(self):
+        name_search = self.ln_upadate_search.text()
+        data_products = self.database.search(name_search)
 
-
+        if data_products:
+            self.ln_update_id.setText(str(data_products[0]))
+            self.ln_update_name.setText(str(data_products[1]))
+            self.ln_update_category.setText(str(data_products[2]))
+            self.ln_update_price.setText(str(data_products[3]))
+            self.ln_update_quantity.setText(str(data_products[4]))
+            self.notification_update.setText('Se encontró el producto')
+        else:
+            self.notification_update.setText('No se encontró el producto')
 
     def save_update(self):
-        print(7)
+        id_ = self.ln_update_id.text()
+        name = self.ln_update_name.text()
+        category = self.ln_update_category.text()
+        price = self.ln_update_price.text()
+        quantity = self.ln_update_quantity.text()
+
+        if name == "" or category == "" or price == "" or quantity == "":
+            self.notification_update.setText('Hay campos vacíos')
+        else:
+            self.database.update(id_, name, category, price, quantity)
+
+            self.notification_update.setText('Se actualizo en producto')
+            self.ln_upadate_search.clear()
+            self.ln_update_id.clear()
+            self.ln_update_name.clear()
+            self.ln_update_category.clear()
+            self.ln_update_price.clear()
+            self.ln_update_quantity.clear()
+
+    def get_text_delete(self):
+        name_search = self.ln_delete_search.text()
+        data_products = self.database.search(name_search)
+
+        self.table_products_delete.setRowCount(1)
+        if data_products:
+            for col, data in enumerate(data_products):
+                item = QtWidgets.QTableWidgetItem(str(data))
+                self.table_products_delete.setItem(0, col, item)
+
+            self.notification_delete.setText('Se encontró el producto')
+        else:
+            self.notification_delete.setText('No se encontró el producto')
 
     def save_delete(self):
-        print(9)
+        id_ = self.table_products_delete.item(0, 0)
+        if id_:
+            self.database.delete(id_.text())
+            self.table_products_delete.removeRow(0)
+            self.notification_delete.setText('Se elimino el producto')
 
 
 if __name__ == '__main__':
