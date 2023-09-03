@@ -96,7 +96,7 @@ background-color: rgb(150, 150, 150);
            <number>9</number>
           </property>
           <item>
-           <widget class="QPushButton" name="menu">
+           <widget class="QPushButton" name="bt_menu">
             <property name="minimumSize">
              <size>
               <width>200</width>
@@ -128,7 +128,7 @@ background-color: rgb(150, 150, 150);
            </widget>
           </item>
           <item>
-           <spacer name="horizontalSpacer">
+           <spacer name="bt_horizontalSpacer">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -141,7 +141,7 @@ background-color: rgb(150, 150, 150);
            </spacer>
           </item>
           <item>
-           <widget class="QPushButton" name="minimize">
+           <widget class="QPushButton" name="bt_minimize">
             <property name="minimumSize">
              <size>
               <width>40</width>
@@ -173,7 +173,7 @@ background-color: rgb(150, 150, 150);
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="minimun">
+           <widget class="QPushButton" name="bt_minimun">
             <property name="minimumSize">
              <size>
               <width>40</width>
@@ -205,7 +205,7 @@ background-color: rgb(150, 150, 150);
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="maximun">
+           <widget class="QPushButton" name="bt_maximun">
             <property name="minimumSize">
              <size>
               <width>40</width>
@@ -237,7 +237,7 @@ background-color: rgb(150, 150, 150);
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="close">
+           <widget class="QPushButton" name="bt_close">
             <property name="minimumSize">
              <size>
               <width>40</width>
@@ -387,7 +387,7 @@ QPushButton:hover {
               </widget>
              </item>
              <item>
-              <widget class="QPushButton" name="bt_eliminate">
+              <widget class="QPushButton" name="bt_delete">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -485,7 +485,7 @@ QTableWidget QTableCornerButton::section{
                 <string notr="true"/>
                </property>
                <property name="currentIndex">
-                <number>0</number>
+                <number>1</number>
                </property>
                <widget class="QWidget" name="page_database">
                 <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -653,7 +653,7 @@ QTableWidget QTableCornerButton::section{
                       <number>10</number>
                      </property>
                      <item>
-                      <widget class="QLineEdit" name="lineEdit">
+                      <widget class="QLineEdit" name="ln_register_id">
                        <property name="minimumSize">
                         <size>
                          <width>400</width>
@@ -663,7 +663,7 @@ QTableWidget QTableCornerButton::section{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLineEdit" name="lineEdit_2">
+                      <widget class="QLineEdit" name="ln_register_name">
                        <property name="minimumSize">
                         <size>
                          <width>0</width>
@@ -673,7 +673,7 @@ QTableWidget QTableCornerButton::section{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLineEdit" name="lineEdit_3">
+                      <widget class="QLineEdit" name="ln_register_category">
                        <property name="minimumSize">
                         <size>
                          <width>0</width>
@@ -683,7 +683,7 @@ QTableWidget QTableCornerButton::section{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLineEdit" name="lineEdit_4">
+                      <widget class="QLineEdit" name="ln_register_price">
                        <property name="minimumSize">
                         <size>
                          <width>0</width>
@@ -693,7 +693,7 @@ QTableWidget QTableCornerButton::section{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLineEdit" name="lineEdit_5">
+                      <widget class="QLineEdit" name="ln_register_quantity">
                        <property name="minimumSize">
                         <size>
                          <width>0</width>
@@ -738,7 +738,7 @@ QTableWidget QTableCornerButton::section{
                  <item>
                   <layout class="QHBoxLayout" name="horizontalLayout_4">
                    <item>
-                    <widget class="QPushButton" name="pushButton">
+                    <widget class="QPushButton" name="bt_save_register">
                      <property name="minimumSize">
                       <size>
                        <width>140</width>
@@ -764,7 +764,7 @@ QTableWidget QTableCornerButton::section{
                     </spacer>
                    </item>
                    <item>
-                    <widget class="QLabel" name="label_8">
+                    <widget class="QLabel" name="notification_register">
                      <property name="minimumSize">
                       <size>
                        <width>200</width>
@@ -834,7 +834,7 @@ QTableWidget QTableCornerButton::section{
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLineEdit" name="lineEdit_11">
+                    <widget class="QLineEdit" name="ln_upadate_search">
                      <property name="minimumSize">
                       <size>
                        <width>260</width>
@@ -911,7 +911,7 @@ QTableWidget QTableCornerButton::section{
                       <number>10</number>
                      </property>
                      <item>
-                      <widget class="QLineEdit" name="lineEdit_6">
+                      <widget class="QLineEdit" name="ln_update_id">
                        <property name="minimumSize">
                         <size>
                          <width>400</width>
@@ -921,7 +921,7 @@ QTableWidget QTableCornerButton::section{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLineEdit" name="lineEdit_7">
+                      <widget class="QLineEdit" name="ln_update_name">
                        <property name="minimumSize">
                         <size>
                          <width>0</width>
@@ -931,7 +931,7 @@ QTableWidget QTableCornerButton::section{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLineEdit" name="lineEdit_8">
+                      <widget class="QLineEdit" name="ln_update_category">
                        <property name="minimumSize">
                         <size>
                          <width>0</width>
@@ -941,7 +941,7 @@ QTableWidget QTableCornerButton::section{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLineEdit" name="lineEdit_9">
+                      <widget class="QLineEdit" name="ln_update_price">
                        <property name="minimumSize">
                         <size>
                          <width>0</width>
@@ -951,7 +951,7 @@ QTableWidget QTableCornerButton::section{
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLineEdit" name="lineEdit_10">
+                      <widget class="QLineEdit" name="ln_update_quantity">
                        <property name="minimumSize">
                         <size>
                          <width>0</width>
@@ -996,7 +996,7 @@ QTableWidget QTableCornerButton::section{
                  <item>
                   <layout class="QHBoxLayout" name="horizontalLayout_7">
                    <item>
-                    <widget class="QPushButton" name="pushButton_2">
+                    <widget class="QPushButton" name="bt_save_update">
                      <property name="minimumSize">
                       <size>
                        <width>140</width>
@@ -1022,7 +1022,7 @@ QTableWidget QTableCornerButton::section{
                     </spacer>
                    </item>
                    <item>
-                    <widget class="QLabel" name="label_14">
+                    <widget class="QLabel" name="notification_update">
                      <property name="minimumSize">
                       <size>
                        <width>200</width>
@@ -1076,7 +1076,7 @@ QTableWidget QTableCornerButton::section{
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLineEdit" name="lineEdit_13">
+                    <widget class="QLineEdit" name="ln_delete_search">
                      <property name="minimumSize">
                       <size>
                        <width>260</width>
@@ -1101,7 +1101,7 @@ QTableWidget QTableCornerButton::section{
                   </layout>
                  </item>
                  <item>
-                  <widget class="QTableWidget" name="table_products_2">
+                  <widget class="QTableWidget" name="table_products_delete">
                    <property name="sizePolicy">
                     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                      <horstretch>0</horstretch>
@@ -1201,7 +1201,7 @@ QTableWidget QTableCornerButton::section{
                  <item>
                   <layout class="QHBoxLayout" name="horizontalLayout_12">
                    <item>
-                    <widget class="QPushButton" name="pushButton_4">
+                    <widget class="QPushButton" name="bt_save_delete">
                      <property name="minimumSize">
                       <size>
                        <width>140</width>
@@ -1227,7 +1227,7 @@ QTableWidget QTableCornerButton::section{
                     </spacer>
                    </item>
                    <item>
-                    <widget class="QLabel" name="label_20">
+                    <widget class="QLabel" name="notification_delete">
                      <property name="minimumSize">
                       <size>
                        <width>200</width>
